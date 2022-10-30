@@ -16,7 +16,6 @@ jobs:
           distribution: "temurin"
           cache: maven
       - name: Analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@master
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
